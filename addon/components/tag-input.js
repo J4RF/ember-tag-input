@@ -49,7 +49,7 @@ export default Component.extend({
       return false;
     }
 
-    return addTag(tag) !== false;
+    return addTag(tags, tag) !== false;
   },
 
   didInsertElement() {
@@ -142,9 +142,9 @@ export default Component.extend({
   },
 
   actions: {
-    removeTag(index) {
+    removeTag(tags, index) {
       const removeTagAtIndex = this.get('removeTagAtIndex');
-      removeTagAtIndex(index);
+      removeTagAtIndex(tags, index);
     }
   }
 });

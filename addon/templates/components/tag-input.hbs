@@ -1,11 +1,11 @@
 {{#each tags as |tag index|~}}
   <li class="emberTagInput-tag">
     {{#if _isRemoveButtonVisible}}
-      {{#unless showRemoveButtonAfter}}<span role="button" class="emberTagInput-remove" {{action 'removeTag' index}}></span>{{/unless}}
+      {{#unless showRemoveButtonAfter}}<span role="button" class="emberTagInput-remove" {{action 'removeTag' tags index}}></span>{{/unless}}
     {{/if}}
     {{tag}}
     {{#if _isRemoveButtonVisible}}
-      {{#if showRemoveButtonAfter}}<span role="button" class="emberTagInput-remove" {{action 'removeTag' index}}></span>{{/if}}
+      {{#if showRemoveButtonAfter}}<span role="button" class="emberTagInput-remove" {{action 'removeTag' tags index}}></span>{{/if}}
     {{/if}}
   </li>
 {{~/each~}}
