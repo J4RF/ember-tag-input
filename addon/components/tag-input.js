@@ -49,7 +49,7 @@ export default Component.extend({
       return false;
     }
 
-    return addTag(tag) !== false;
+    return addTag(tags, tag) !== false;
   },
 
   didInsertElement() {
@@ -92,7 +92,7 @@ export default Component.extend({
             }
           }
 
-          removeTagAtIndex(tags.length - 1);
+          removeTagAtIndex(tags, tags.length - 1);
         }
       } else {
         if (e.which === KEY_CODES.COMMA || (!allowSpacesInTags && e.which === KEY_CODES.SPACE) || e.which === KEY_CODES.ENTER) {
@@ -142,9 +142,9 @@ export default Component.extend({
   },
 
   actions: {
-    removeTag(index) {
+    removeTag(tags, index) {
       const removeTagAtIndex = this.get('removeTagAtIndex');
-      removeTagAtIndex(index);
+      removeTagAtIndex(tags, index);
     }
   }
 });
